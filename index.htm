@@ -4,16 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Redirecting...</title>
+    <div id="noAuth"></div>
     <script>
       window.onload = function () {
         const urlParams = new URLSearchParams(window.location.search);
         const code = urlParams.get("code");
+        const noAuth = urlParams;
 
-        if (code) {
-          window.location.replace("myapp://phoneNumber?code=" + code + "&instagram=true");
-        } else {
-          window.location.replace("myapp://signUpProvider");
-        }
+        document.write("No auth: " + noAuth + "<br>");
+        // if (code) {
+        //   window.location.replace("myapp://phoneNumber?code=" + code + "&instagram=true");
+        // } else {
+        document.getElementById("noAuth").innerHTML = "No auth: " + noAuth;
+        //   window.location.replace("myapp://signUpProvider");
+        // }
       };
     </script>
   </head>
