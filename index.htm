@@ -11,7 +11,7 @@
         const error = urlParams.get("error");
 
         if (code) {
-          window.location.replace("myapp://phoneNumber?code=" + code + "&instagram=true");
+          window.location.replace("myapp://signUpProvider?code=" + code + "&instagram=true");
         } else if (error === "access_denied") {
           window.location.replace("myapp://signUpProvider?error=access_denied");
         } else {
